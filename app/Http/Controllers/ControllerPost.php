@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
+ 
 use Illuminate\Http\Request;
-use App\Models\Category;
-class CategoryController extends Controller
+use App\Models\Post;
+class ControllerPost extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,10 +13,10 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // select * from categories
-        $categories = Category::all();
-        return response()->json(['categories' => $categories]);
-
+        //
+            $post = Post::all();
+            //dd($post);
+            return response()->json(['posts'=> $post]);
     }
 
     /**
@@ -46,13 +46,11 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-        // /api/category/
-
-    public function show($id) 
+    public function show($id)
     {
-        // selec * from categories where id = $id;
-        $category = Category::findOrFail($id);
-        return response()->json(['category' => $category]);
+        //
+        $post = Post::findOrfail($id);
+        return response()->json(['post' => $post]);
     }
 
     /**
