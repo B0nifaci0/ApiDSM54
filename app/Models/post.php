@@ -17,7 +17,6 @@ class post extends Model
     }
 
     // un post tiene una categoria
-
     public function category(){
         return $this->belongTo(Category::class);
     }

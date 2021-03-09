@@ -19,11 +19,13 @@ use Illuminate\Support\Facades\Route;
 }); */
 
 //Routes category
-Route::apiResource('category','\App\Http\Controllers\CategoryController');
+Route::apiResource('categories','\App\Http\Controllers\CategoryController');
 
 //post
-Route::apiResource('postresource','\App\Http\Controllers\ControllerPost');
-Route::get('post/{id}','\App\Http\Controllers\PostController@individual');
-Route::get('post','\App\Http\Controllers\PostController@index');
-Route::get('pdededeost','\App\Http\Controllers\PostController@index');
+Route::apiResource('posts','\App\Http\Controllers\ControllerPost');
+//Route::get('post/{id}','\App\Http\Controllers\PostController@individual');
+//Route::get('post','\App\Http\Controllers\PostController@index');
+//Route::get('pdededeost','\App\Http\Controllers\PostController@index');
+Route::get('postCategory/{id}','\App\Http\Controllers\PostController@categoryPost');
+Route::get('postCategory','\App\Http\Controllers\PostController@categoryPosthome');
  

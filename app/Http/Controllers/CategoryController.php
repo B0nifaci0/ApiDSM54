@@ -13,7 +13,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        // select * from categories
+        // lista todas las categorias select * from categories
         $categories = Category::all();
         return response()->json(['categories' => $categories]);
 
@@ -50,7 +50,8 @@ class CategoryController extends Controller
 
     public function show($id) 
     {
-        // selec * from categories where id = $id;
+        // muestra el detalle de la categoria 
+        //selec * from categories where id = $id;
         $category = Category::findOrFail($id);
         return response()->json(['category' => $category]);
     }
